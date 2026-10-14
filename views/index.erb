@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Умный калькулятор</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="calc">
+    <header class="calc__header">
+      <h1>Умный калькулятор</h1>
+      <button id="theme-toggle" class="theme-toggle" type="button" data-ui aria-label="Переключить тему">Тема</button>
+    </header>
+
+    <section class="display" aria-label="Дисплей">
+      <div id="expression" class="display__expression">0</div>
+      <div id="result" class="display__result" aria-live="polite"></div>
+      <button id="toggle-full" class="link-button" type="button" data-ui hidden>Показать полностью</button>
+      <div id="error" class="display__error" role="alert"></div>
+    </section>
+
+    <section class="keys keys--functions" aria-label="Функции">
+      <button type="button" data-type="func" data-value="sin">sin</button>
+      <button type="button" data-type="func" data-value="cos">cos</button>
+      <button type="button" data-type="func" data-value="tan">tan</button>
+      <button type="button" data-type="func" data-value="cot">cot</button>
+      <button type="button" data-type="func" data-value="ln">ln</button>
+    </section>
+
+    <section class="keys keys--main" aria-label="Клавиши">
+      <button type="button" class="key--control" data-type="action" data-value="clear" aria-label="Очистить всё">C</button>
+      <button type="button" class="key--control" data-type="action" data-value="backspace" aria-label="Удалить последний символ">←</button>
+      <button type="button" class="key--control" data-type="paren" data-value="(">(</button>
+      <button type="button" class="key--control" data-type="paren" data-value=")">)</button>
+
+      <button type="button" data-type="digit" data-value="7">7</button>
+      <button type="button" data-type="digit" data-value="8">8</button>
+      <button type="button" data-type="digit" data-value="9">9</button>
+      <button type="button" class="key--op" data-type="op" data-value="/">/</button>
+
+      <button type="button" data-type="digit" data-value="4">4</button>
+      <button type="button" data-type="digit" data-value="5">5</button>
+      <button type="button" data-type="digit" data-value="6">6</button>
+      <button type="button" class="key--op" data-type="op" data-value="*">*</button>
+
+      <button type="button" data-type="digit" data-value="1">1</button>
+      <button type="button" data-type="digit" data-value="2">2</button>
+      <button type="button" data-type="digit" data-value="3">3</button>
+      <button type="button" class="key--op" data-type="op" data-value="-">-</button>
+
+      <button type="button" data-type="digit" data-value="0">0</button>
+      <button type="button" data-type="dot" data-value=".">.</button>
+      <button type="button" class="key--op" data-type="op" data-value="^">^</button>
+      <button type="button" class="key--op" data-type="op" data-value="+">+</button>
+
+      <button type="button" class="key--op" data-type="op" data-value="%">%</button>
+      <button type="button" class="key--equals" data-type="action" data-value="equals">=</button>
+    </section>
+
+    <section class="history" aria-label="История вычислений">
+      <div class="history__header">
+        <h2>История (последние 10)</h2>
+        <button id="clear-history" class="link-button" type="button" data-ui>Очистить</button>
+      </div>
+      <ol id="history" class="history__list"></ol>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
